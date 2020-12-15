@@ -1,4 +1,0 @@
-/home/tobias/Desktop/GUI/build-tcpip-Desktop-Default/CMakeFiles/rebuild_cache.dir
-/home/tobias/Desktop/GUI/build-tcpip-Desktop-Default/CMakeFiles/AllinOne1.2.dir
-/home/tobias/Desktop/GUI/build-tcpip-Desktop-Default/CMakeFiles/edit_cache.dir
-/home/tobias/Desktop/GUI/build-tcpip-Desktop-Default/CMakeFiles/AllinOne1.2_autogen.dir
