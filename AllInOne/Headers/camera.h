@@ -16,6 +16,7 @@ public:
     cv::Mat getMat();
     cv::Point2f getBallLocation(cv::Mat table);
     cv::Point2f getTargetLocation(cv::Mat table);
+    void drawTarget(cv::Mat table);
 
 
     Pylon::CInstantCamera* camera;

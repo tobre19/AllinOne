@@ -27,12 +27,15 @@ public:
     double getAngularVelocity(double GribberToTarget);
     double getBaseAngle(double x, double y, double distanceToCup);
     double getGribberToTarget(double x1, double y1, double BaseAngle);
+
     std::pair<double,double> calculateThrowingInformation();
+    std::pair<double, double> calculateTCPVelocity(double jointPositions[6], double jointSpeeds[6]);
 
 private:
     int mTossPositionX;
     int mTossPositionY;
     double mVelocity;
+    double mAngleVelocity;
     int mTargetPositionX;
     int mTargetPositionY;
     int mTestNumber;

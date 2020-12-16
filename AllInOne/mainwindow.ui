@@ -35,116 +35,116 @@
        <item row="1" column="1">
         <widget class="QLineEdit" name="leTestNumber"/>
        </item>
-       <item row="5" column="0">
+       <item row="8" column="0">
         <widget class="QPushButton" name="pbGripBall">
          <property name="text">
           <string>Grip ball</string>
          </property>
         </widget>
        </item>
-       <item row="11" column="0">
+       <item row="14" column="0">
         <widget class="QLabel" name="label_6">
          <property name="text">
           <string>Target detected at</string>
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
+       <item row="14" column="1">
         <widget class="QLineEdit" name="leTargetDetected"/>
        </item>
-       <item row="12" column="0">
+       <item row="15" column="0">
         <widget class="QLabel" name="label">
          <property name="text">
           <string>Ball detected at</string>
          </property>
         </widget>
        </item>
-       <item row="13" column="0">
+       <item row="16" column="0">
         <widget class="QLabel" name="label_2">
          <property name="text">
           <string>Ball landed at</string>
          </property>
         </widget>
        </item>
-       <item row="14" column="0">
+       <item row="17" column="0">
         <widget class="QLabel" name="label_3">
          <property name="text">
           <string>Velocity af toss</string>
          </property>
         </widget>
        </item>
-       <item row="14" column="1">
+       <item row="17" column="1">
         <widget class="QLineEdit" name="leVelocityToss"/>
        </item>
-       <item row="15" column="0">
+       <item row="18" column="0">
         <widget class="QLabel" name="label_8">
          <property name="text">
           <string>Precision of toss</string>
          </property>
         </widget>
        </item>
-       <item row="15" column="1">
+       <item row="18" column="1">
         <widget class="QLineEdit" name="leTossPrecision"/>
        </item>
-       <item row="19" column="0">
+       <item row="22" column="0">
         <widget class="QPushButton" name="pbAddToss">
          <property name="text">
           <string>Add toss to database</string>
          </property>
         </widget>
        </item>
-       <item row="20" column="0">
+       <item row="23" column="0">
         <widget class="QLabel" name="label_4">
          <property name="text">
           <string>Number of tosses in test</string>
          </property>
         </widget>
        </item>
-       <item row="20" column="1">
+       <item row="23" column="1">
         <widget class="QLineEdit" name="leNumberOfTosses"/>
        </item>
-       <item row="21" column="0">
+       <item row="24" column="0">
         <widget class="QLabel" name="label_5">
          <property name="text">
           <string>Average precision in test</string>
          </property>
         </widget>
        </item>
-       <item row="21" column="1">
+       <item row="24" column="1">
         <widget class="QLineEdit" name="lePrecision"/>
        </item>
-       <item row="12" column="1">
+       <item row="15" column="1">
         <widget class="QLineEdit" name="leBallDeteced">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
-       <item row="13" column="1">
+       <item row="16" column="1">
         <widget class="QLineEdit" name="leBallLanded"/>
        </item>
-       <item row="4" column="0">
+       <item row="5" column="0">
         <widget class="QPushButton" name="pbDetectTarget">
          <property name="text">
           <string>Detect target</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="0">
+       <item row="9" column="0">
         <widget class="QPushButton" name="pbTossBall">
          <property name="text">
           <string>Toss ball</string>
          </property>
         </widget>
        </item>
-       <item row="23" column="0">
+       <item row="26" column="0">
         <widget class="QPushButton" name="pbConnecToRobot">
          <property name="text">
           <string>Connect to Robot</string>
          </property>
         </widget>
        </item>
-       <item row="22" column="0">
+       <item row="25" column="0">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -156,6 +156,13 @@
           </size>
          </property>
         </spacer>
+       </item>
+       <item row="7" column="0">
+        <widget class="QPushButton" name="pbShowTarget">
+         <property name="text">
+          <string>Show target</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>

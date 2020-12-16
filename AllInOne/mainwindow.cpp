@@ -13,6 +13,7 @@ MainWindow::MainWindow(Camera* basler, QWidget *parent) :
     ui(new Ui::MainWindow),
     mBasler(basler)
 {
+    showTarget = false;
     Timer = new QTimer(this);
     connect(Timer, SIGNAL(timeout()), this, SLOT(DisplayVideo()));
     Timer->start();
@@ -73,6 +74,8 @@ void MainWindow::on_pbDetectTarget_clicked()
     std::string targetPosition = "[" + std::to_string(mToss.getTargetPositionX()) + ", " + std::to_string(mToss.getTargetPositionY()) + "]";
     QString qTargetPosition = QString::fromStdString(targetPosition);
     ui->leTargetDetected->setText(qTargetPosition);
+
+
 }
 
 void MainWindow::on_pbGripBall_clicked()
@@ -109,13 +112,11 @@ void MainWindow::on_pbTossBall_clicked()
         } else {
             std::cout << "No target has been acquired" << std::endl;
         }
-        server->readFromClient();
     } else {
         std::cerr << "Robot is not connected" << std::endl;
     }
 
 
-    server->readFromClient();
     cv::Point2f ballPosition;
     while (ballPosition.x == 0 && ballPosition.y == 0) {
         ballPosition = mBasler->getBallLocation(grappedImage = mBasler->getMat());
@@ -181,6 +182,10 @@ void MainWindow::on_pbCreateNewTest_clicked()
 void MainWindow::DisplayVideo(){
     grappedImage = mBasler->getMat();
 
+    if (showTarget) {
+        mBasler->drawTarget(grappedImage);
+    }
+
     mBasler->getBallLocation(grappedImage);
     if (grappedImage.empty()) {
       std::cout << "Could not load image";
@@ -196,4 +201,9 @@ void MainWindow::DisplayVideo(){
 void MainWindow::on_pbConnecToRobot_clicked()
 {
     serverthread = new std::thread(&TcpIPServer::connectToClient, server);
+}
+
+void MainWindow::on_pbShowTarget_clicked()
+{
+    showTarget = !showTarget;
 }

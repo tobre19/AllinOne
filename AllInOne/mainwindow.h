@@ -34,12 +34,16 @@ public slots:
     void DisplayVideo();
 
 private slots:
+    void on_pbShowTarget_clicked();
+
+private slots:
     void on_pbConnecToRobot_clicked();
 
 private:
     Ui::MainWindow *ui;
     Camera* mBasler;
     cv::Mat grappedImage;
+    bool showTarget;
 
     TcpIPServer* server;
     std::thread* serverthread;

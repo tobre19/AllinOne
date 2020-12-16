@@ -25,6 +25,7 @@ public:
     void sender(float x, float y);
     void sendThrowingInformation(std::pair<double,double> baseAngleAndAngularVelocity);
     void readFromClient();
+    void readFloatFromClient();
     bool isConnected();
 
     void closeClientSocket();

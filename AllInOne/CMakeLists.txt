@@ -19,6 +19,7 @@ include_directories(${Pylon_INCLUDE_DIRS})
 include_directories(Sources)
 include_directories(Headers)
 include_directories(TCPIP)
+include_directories(Robot)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(QT_USE_QTSQL TRUE)
@@ -28,13 +29,14 @@ set(CMAKE_AUTORCC ON)
 
 file(GLOB SOURCES Sources/*.cpp Headers/*.h)
 file(GLOB TCPIP TCPIP/*)
+file(GLOB Robot Robot/*)
 
 set (project_sources
     main.cpp
     mainwindow.cpp
     tcpserver.cpp)
 
-add_executable(AllinOne1.2 main.cpp mainwindow.cpp dbconnector.cpp toss.cpp mainwindow.ui ${SOURCES} ${TCPIP})
+add_executable(AllinOne1.2 main.cpp mainwindow.cpp dbconnector.cpp mainwindow.ui ${SOURCES} ${TCPIP}  ${Robot})
 
 qt5_wrap_ui (mainwindow mainwindow.ui)
 

@@ -1,4 +1,8 @@
 #include "tcpipserver.h"
+#include <fstream>
+#include <sstream>
+#include <iostream>
+
 TcpIPServer::TcpIPServer()
 {
     // Create a socket
@@ -104,17 +108,62 @@ void TcpIPServer::sendThrowingInformation(std::pair<double,double> baseAngleAndA
     sendString("( 13, " + Vbuff + " )");
 
     readFromClient();
+
+    std::cout << "This is it" << std::endl;
+
+    for (int i = 0; i < 12; i++) {
+        readFromClient();
+    }
+
+    std::cout << "This is it" << std::endl;
 }
 
 void TcpIPServer::readFromClient()
 {
     int length = 100;
-    char received [length];
-    recv(clientSocket, received, sizeof(received), 0);
+    char buffer [length];
+    recv(clientSocket, buffer, sizeof(buffer), 0);
 
-    if (received[0] != '\0') {
-        std::cout << received << std::endl;
-    }
+    std::string str(buffer);
+    std::string str2;
+
+    std::istringstream iss(str);
+
+    std::getline(iss, str2, '\0');
+
+//    char c = buffer[0];
+//    int count = 1;
+//    while (c != '\0') {
+//        std::cout << c;
+//        c = buffer[count];
+//        count++;
+//    }
+//    std::cout << std::endl;
+}
+
+void TcpIPServer::readFloatFromClient()
+{
+
+
+    int length = 100;
+    char buffer [length];
+    recv(clientSocket, buffer, sizeof(buffer), 0);
+
+    std::string str(buffer);
+    std::string str2;
+
+    std::istringstream iss(str);
+
+    std::getline(iss, str2, '\0' );
+//    char c = buffer[0];
+//    int count = 1;
+//    while (c != '\0') {
+//        std::cout << c;
+//        c = buffer[count];
+//        count++;
+//    }
+//    std::cout << std::endl;
+
 }
 
 bool TcpIPServer::isConnected()
