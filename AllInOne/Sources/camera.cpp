@@ -68,7 +68,6 @@ int Camera::getFrameCount() const
 cv::Mat Camera::getMat()
 {
     cv::Mat table;
-    cv::Mat table2D;
 
 
     if (camera->IsGrabbing()) {
